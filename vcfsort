@@ -1,5 +1,7 @@
 #!/bin/bash
 # Faster, but can't handle streams
+# Courtesy of Aaron Quinalan (and others)
+# Source available at https://gist.github.com/arq5x/ab78b7be4d4f2a989a31
 
 [ $# -eq 0 ] && { echo "Sorts a VCF file in natural chromosome order";\
     echo "Usage: $0 [my.vcf | my.vcf.gz]"; exit 1;
