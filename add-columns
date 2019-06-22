@@ -3,8 +3,8 @@ import sys
 
 def usage():
     h = "add: take the sum of two integer columns\n"
-    h += "Usage: cat <input> | add [<firstInt> <secondInt> <columnDelimiter>]"
-    print(h)
+    h += "Usage: cat <input> | add [<firstInt> <secondInt> <columnDelimiter>]\n"
+    sys.stderr.write(h)
 
 if __name__ == "__main__":
 
