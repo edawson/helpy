@@ -1,0 +1,2 @@
+d=`date -I`
+mkdir -p "${1}_${d}"

@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+from __future__ import print_function
+from sys import stdin, stderr, maxsize
+
+if __name__ == "__main__":
+
+    m = -maxsize - 1
+    for line in stdin:
+        line = line.strip()
+        if line is not '' and line.isdigit():
+            m = max(int(line), m)
+        else:
+            stderr.write("Non-numeric line detected [accumulate]: " + line + "\n") 
+    print(m)

@@ -6,6 +6,7 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--count", help="Output counts of distinct input lines.", required=False, default=False, dest="count", action="store_true")
+    parser.add_argument("-d", "--duplicates", help="Output duplicated (rather than distinct) lines.", required=False, default=False, dest="duplicated", action="store_true")
     
     return parser.parse_args()
 
@@ -16,7 +17,10 @@ if __name__ == "__main__":
     
     d = defaultdict(int)
     for line in sys.stdin:
+        if line.strip() in d and args.duplicated:
+            print (line.strip())
         d[line.strip()] += 1
+
 
     if args.count:
         for i in d:
