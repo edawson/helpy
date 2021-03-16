@@ -1,3 +1,8 @@
 #!/bin/sh
 
-cat $1 | head -n 1 | sed "s/\t/\n/g"
+count=0
+for i in `cat $1 | head -n 1 | sed "s/\t/\n/g"`;
+do
+    count=$((count+1))
+    echo "$i\t$count"
+done
