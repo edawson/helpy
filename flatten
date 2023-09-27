@@ -1,0 +1,9 @@
+#!/bin/bash
+
+input=$1
+if [ -d "$input" ]
+then
+    tar cvf $(basename $input).tar $input
+else
+    tar cvf $(basename $input).tar ${input}*
+fi
